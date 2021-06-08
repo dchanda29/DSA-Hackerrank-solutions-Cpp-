@@ -1,0 +1,50 @@
+/*
+ *'reversePrint' function below.
+ *
+ * The function accepts INTEGER_SINGLY_LINKED_LIST llist as parameter.
+ */
+
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+ 
+ //with recursion
+ 
+void reversePrint(SinglyLinkedListNode* llist)
+ {
+SinglyLinkedListNode* ptr=llist;
+
+
+    if(ptr!=NULL){
+       reversePrint(ptr->next);
+       cout<<ptr->data<<endl;
+       
+    }}
+ 
+ 
+ //without recursion
+ void reversePrint(SinglyLinkedListNode* llist)
+ {
+SinglyLinkedListNode* ptr,*prev,*temp;
+ ptr=llist; prev=NULL,temp=NULL;
+ 
+ while(ptr!=NULL)
+ {
+     temp=ptr->next;
+     ptr->next=prev;
+     prev=ptr;
+     ptr=temp;
+     
+ }
+ llist=prev;
+
+while(llist!=NULL)
+{cout<<llist->data<<endl;
+llist=llist->next;
+}}
