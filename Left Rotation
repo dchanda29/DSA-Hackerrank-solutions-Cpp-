@@ -1,0 +1,27 @@
+/*
+ * 'rotateLeft' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts following parameters:
+ *  1. INTEGER d
+ *  2. INTEGER_ARRAY arr
+ */
+
+vector<int> rotateLeft(int d, vector<int> arr)
+ {
+     int n=arr.size();
+     vector<int> res;
+     
+     for(int x=0;x<n;x++)
+     {
+         res.push_back(arr[x]);
+     }
+         for(int y =0;y<d;y++)
+         {
+         int k=arr.front();
+         res.push_back(k);
+         res.erase(res.begin());
+         arr.erase(arr.begin());
+}
+return res;
+ }
